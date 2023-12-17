@@ -1,0 +1,10 @@
+-- for postgres
+--INSERT INTO roles (id, name) VALUES (1, 'USER') ON CONFLICT (id) DO NOTHING;
+--INSERT INTO roles (id, name) VALUES (2, 'MODERATOR') ON CONFLICT (id) DO NOTHING;
+--INSERT INTO roles (id, name) VALUES (3, 'ADMIN') ON CONFLICT (id) DO NOTHING;
+
+
+-- For H2
+INSERT INTO roles (id, name) SELECT 1, 'USER' WHERE NOT EXISTS (SELECT 1 FROM roles WHERE id = 1);
+INSERT INTO roles (id, name) SELECT 2, 'MODERATOR' WHERE NOT EXISTS (SELECT 1 FROM roles WHERE id = 2);
+INSERT INTO roles (id, name) SELECT 3, 'ADMIN' WHERE NOT EXISTS (SELECT 1 FROM roles WHERE id = 3);
