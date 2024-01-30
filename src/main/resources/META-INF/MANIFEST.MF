@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Main-Class: org.springframework.boot.SpringApplication
+Start-Class: com.ads.mangement.MangementApplication
+Spring-Boot-Classes: BOOT-INF/classes/
+Spring-Boot-Lib: BOOT-INF/lib/

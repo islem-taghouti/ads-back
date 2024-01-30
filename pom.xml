@@ -64,7 +64,16 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+		<finalName>devops-integration</finalName>
+	</build>
+<!--
 	<build>
 		<plugins>
 			<plugin>
@@ -87,9 +96,11 @@
 					</archive>
 				</configuration>
 			</plugin>
+
+
 		</plugins>
 		<finalName>devops-integration</finalName>
-	</build>
+	</build>-->
 
 
 </project>
