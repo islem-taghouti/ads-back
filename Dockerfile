@@ -10,5 +10,9 @@ EXPOSE 8080
 
 COPY --from=build /app/target/devops-integration.jar devops-integration.jar
 
+COPY --from=build /root/.m2/repository /app/.m2/repository
+
+ENV CLASSPATH=/app/.m2/repository/*
+
 # CMD to run the application
 CMD ["java", "-jar", "devops-integration.jar"]
